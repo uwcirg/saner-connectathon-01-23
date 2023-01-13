@@ -3,7 +3,6 @@ pyyaml
 pyarrow
 pandas
 numpy
-pandas
 phdi-dist/phdi-1.0.tar.gz
 google-api-python-client
 google-auth-httplib2
