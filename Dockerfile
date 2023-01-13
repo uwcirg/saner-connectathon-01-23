@@ -1,4 +1,4 @@
-# pyarrow doesn't support python 3.11 yet
+# pyarrow doesn't build python 3.11 binaries (wheels) yet
 # https://github.com/apache/arrow/pull/14499
 FROM python:3.10
 
