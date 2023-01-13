@@ -28,6 +28,8 @@ def main():
     Prints values from a sample spreadsheet.
     """
     creds = service_account.Credentials.from_service_account_file('saner-cat-23-25038f1782b1.json')
+
+    # REMOVED IN FAVOR OF SERVICE ACCOUNT
     # creds = None
     # # The file token.json stores the user's access and refresh tokens, and is
     # # created automatically when the authorization flow completes for the first
