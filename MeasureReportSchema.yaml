@@ -1,0 +1,145 @@
+metadata:
+  # Parameters that specify metadata applying to all tables in the schema
+  results_per_page: 1000
+tables:
+  CDC Patient Impact and Hospital Capacity:
+    resource_type: MeasureReport
+    query_params:
+      measure: http://hl7.org/fhir/uv/saner/Measure/CDCPatientImpactAndHospitalCapacity
+    earliest_updated_datetime: "2020-01-01T00:00:00"
+    columns:
+      MeasureReport ID:
+        fhir_path: MeasureReport.id
+        selection_criteria: first
+      Measure:
+        fhir_path: MeasureReport.measure
+        selection_criteria: first
+      Updated:
+        fhir_path: MeasureReport.meta.lastUpdated
+        selection_criteria: first
+      Subject:
+        fhir_path: MeasureReport.subject.display
+        selection_criteria: first
+      Reporter:
+        fhir_path: MeasureReport.reporter.display
+        selection_criteria: first
+      Period Start:
+        fhir_path: MeasureReport.period.start
+        selection_criteria: first
+      Period End:
+        fhir_path: MeasureReport.period.end
+        selection_criteria: first
+      Beds:
+        fhir_path: MeasureReport.group[0].measureScore.value
+        selection_criteria: first
+      numTotBeds:
+        fhir_path: MeasureReport.group[0].population[0].count
+        selection_criteria: first
+      numBeds:
+        fhir_path: MeasureReport.group[0].population[1].count
+        selection_criteria: first
+      numBedsOcc:
+        fhir_path: MeasureReport.group[0].population[2].count
+        selection_criteria: first
+      numICUBeds:
+        fhir_path: MeasureReport.group[0].population[3].count
+        selection_criteria: first
+      numICUBedsOcc:
+        fhir_path: MeasureReport.group[0].population[4].count
+        selection_criteria: first
+      Ventilators:
+        fhir_path: MeasureReport.group[1].measureScore.value
+        selection_criteria: first
+      numVent:
+        fhir_path: MeasureReport.group[1].population[0].count
+        selection_criteria: first
+      numVentUse:
+        fhir_path: MeasureReport.group[1].population[1].count
+        selection_criteria: first
+      Encounters:
+        fhir_path: MeasureReport.group[2].measureScore.value
+        selection_criteria: first
+      numC19HospPats:
+        fhir_path: MeasureReport.group[2].population[0].count
+        selection_criteria: first
+      numC19MechVentPats:
+        fhir_path: MeasureReport.group[2].population[1].count
+        selection_criteria: first
+      numC19HOPats:
+        fhir_path: MeasureReport.group[2].population[2].count
+        selection_criteria: first
+      numC19OverflowPats:
+        fhir_path: MeasureReport.group[2].population[3].count
+        selection_criteria: first
+      numC19OFMechVentPats:
+        fhir_path: MeasureReport.group[2].population[4].count
+        selection_criteria: first
+      numC19Died:
+        fhir_path: MeasureReport.group[2].population[5].count
+        selection_criteria: first
+  FEMA Daily Hospital COVID-19 Reporting:
+    resource_type: MeasureReport
+    query_params:
+      measure: http://hl7.org/fhir/uv/saner/Measure/FEMADailyHospitalCOVID19Reporting
+    earliest_updated_datetime: "2020-01-01T00:00:00"
+    columns:
+      MeasureReport ID:
+        fhir_path: MeasureReport.id
+        selection_criteria: first
+      Measure:
+        fhir_path: MeasureReport.measure
+        selection_criteria: first
+      Updated:
+        fhir_path: MeasureReport.meta.lastUpdated
+        selection_criteria: first
+      Subject:
+        fhir_path: MeasureReport.subject.display
+        selection_criteria: first
+      Reporter:
+        fhir_path: MeasureReport.reporter.display
+        selection_criteria: first
+      Period Start:
+        fhir_path: MeasureReport.period.start
+        selection_criteria: first
+      Period End:
+        fhir_path: MeasureReport.period.end
+        selection_criteria: first
+      positiveIncreasePercent:
+        fhir_path: MeasureReport.group[0].measureScore.value
+        selection_criteria: first
+      positiveIncreasePercentUnit:
+        fhir_path: MeasureReport.group[0].measureScore.unit
+        selection_criteria: first
+      totalOrdersIncrease:
+        fhir_path: MeasureReport.group[0].population[0].count
+        selection_criteria: first
+      totalTestResultsIncrease:
+        fhir_path: MeasureReport.group[0].population[1].count
+        selection_criteria: first
+      positiveIncrease:
+        fhir_path: MeasureReport.group[0].population[2].count
+        selection_criteria: first
+      positivePercent:
+        fhir_path: MeasureReport.group[1].measureScore.value
+        selection_criteria: first
+      positivePercentUnit:
+        fhir_path: MeasureReport.group[1].measureScore.unit
+        selection_criteria: first
+      totalOrders:
+        fhir_path: MeasureReport.group[1].population[0].count
+        selection_criteria: first
+      rejected:
+        fhir_path: MeasureReport.group[1].population[1].count
+        selection_criteria: first
+      totalTestResults:
+        fhir_path: MeasureReport.group[1].population[2].count
+        selection_criteria: first
+      positive:
+        fhir_path: MeasureReport.group[1].population[3].count
+        selection_criteria: first
+      allReports:
+        fhir_path: MeasureReport.group[1].population[4].count
+        selection_criteria: first
+      latestReports:
+        fhir_path: MeasureReport.group[1].population[5].count
+        selection_criteria: first
