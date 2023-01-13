@@ -4,8 +4,7 @@ pyarrow
 pandas
 numpy
 pandas
-# phdi-1.0.zip
-# phdi-1.0.tar.gz
+phdi-dist/phdi-1.0.tar.gz
 google-api-python-client
 google-auth-httplib2
 google-auth-oauthlib
