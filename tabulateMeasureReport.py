@@ -29,7 +29,7 @@ for table_name, data in results.items():
     print(tabulated_results[table_name][0])
     print(tabulated_results[table_name][1])
     df = pd.DataFrame(data=tabulated_results[table_name][1:], columns=tabulated_results[table_name][0])
-    df = df.sort_values(by=['Period Start','Period End','Subject','Reporter'], ascending=True, ignore_index=True)
+    df = df.sort_values(by=['Subject','Reporter','Period Start','Period End'], ascending=True, ignore_index=True)
     df.to_csv(output_path+filename)
     # write_data(tabulated_results[table_name], output_path, output_format, filename) # Removed in favor of DataFrame.to_csv
     print("Wrote " + table_name + " table to " + output_path + filename)

@@ -16,7 +16,7 @@ import csv
 
 # If modifying these scopes, delete the file token.json.
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.']
-CREDENTIALS_FILE = 'saner-cat-23-25038f1782b1.json'
+CREDENTIALS_FILE = 'credentials.json'
 SCHEMA_FILE = 'MeasureReportSchema.yaml'
 
 # The ID and range of a sample spreadsheet.
@@ -27,7 +27,7 @@ def main():
     """Shows basic usage of the Sheets API.
     Prints values from a sample spreadsheet.
     """
-    creds = service_account.Credentials.from_service_account_file('saner-cat-23-25038f1782b1.json')
+    creds = service_account.Credentials.from_service_account_file(CREDENTIALS_FILE)
 
     # REMOVED IN FAVOR OF SERVICE ACCOUNT
     # creds = None
