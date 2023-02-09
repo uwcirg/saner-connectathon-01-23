@@ -1,0 +1,8 @@
+---
+version: "3.4"
+services:
+  etl:
+    build: .
+    volumes:
+      # mount host git checkout on top of container git checkout
+      - ./:/opt/app
