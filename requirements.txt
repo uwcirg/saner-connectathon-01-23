@@ -3,7 +3,8 @@ pyyaml
 pyarrow
 pandas
 numpy
-phdi-dist/phdi-1.0.tar.gz
+pandas
+git+https://github.com/CDCgov/phdi#egg=phdi
 google-api-python-client
 google-auth-httplib2
 google-auth-oauthlib
