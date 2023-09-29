@@ -1,0 +1,263 @@
+{
+    "resourceType": "MeasureReport",
+    "status": "complete",
+    "type": "summary",
+    "measure": "http://hl7.org/fhir/uv/saner/Measure/CDCPatientImpactAndHospitalCapacity",
+    "subject": "$subject",
+    "date": "$date",
+    "reporter": {
+        "reference": "#WADOH",
+        "display": "Washington State Department of Health"
+    },
+    "period": {
+        "start": "$start",
+        "end": "$end"
+    },
+    "contained": [
+        {
+            "resourceType": "Organization",
+            "id": "WADOH",
+            "name": "Washington State Department of Health",
+            "address": [
+                {
+                    "line": [
+                        "59 Washington St."
+                    ],
+                    "city": "Olympia",
+                    "state": "WA",
+                    "postalCode": "98501",
+                    "country": "USA"
+                }
+            ]
+        }
+    ],
+    "group": [
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/uv/saner/CodeSystem/MeasureGroupSystem",
+                        "code": "Beds"
+                    }
+                ],
+                "text": "Hospital Bed Reporting"
+            },
+            "population": [
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/uv/saner/CodeSystem/MeasuredValues",
+                                "code": "numTotBeds"
+                            },
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                                "code": "initial-population"
+                            }
+                        ],
+                        "text": "Total number of all Inpatient and outpatient beds, including all staffed, ICU, licensed, and overflow(surge) beds used for inpatients or outpatients."
+                    },
+                    "count": "$numTotBeds"
+                },
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/uv/saner/CodeSystem/MeasuredValues",
+                                "code": "numbeds"
+                            }
+                        ],
+                        "text": "Inpatient beds, including all staffed, licensed, and overflow(surge) beds used for inpatients."
+                    },
+                    "count": "$numbeds"
+                },
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/uv/saner/CodeSystem/MeasuredValues",
+                                "code": "numBedsOcc"
+                            }
+                        ],
+                        "text": "Total number of staffed inpatient beds that are occupied."
+                    },
+                    "count": "$numBedsOcc"
+                },
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/uv/saner/CodeSystem/MeasuredValues",
+                                "code": "numICUBeds"
+                            }
+                        ],
+                        "text": "Total number of staffed inpatient intensive care unit (ICU) beds."
+                    },
+                    "count": "$numICUBeds"
+                },
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/uv/saner/CodeSystem/MeasuredValues",
+                                "code": "numICUBedsOcc"
+                            }
+                        ],
+                        "text": "Total number of staffed inpatient ICU beds that are occupied."
+                    },
+                    "count": "$numICUBedsOcc"
+                }
+            ]
+        },
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/uv/saner/CodeSystem/MeasureGroupSystem",
+                        "code": "Ventilators"
+                    }
+                ],
+                "text": "Hospital Ventilator Reporting"
+            },
+            "population": [
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/uv/saner/CodeSystem/MeasuredValues",
+                                "code": "numVent"
+                            },
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                                "code": "initial-population"
+                            }
+                        ],
+                        "text": "Total number of ventilators available."
+                    },
+                    "count": "$numVent"
+                },
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/uv/saner/CodeSystem/MeasuredValues",
+                                "code": "numVentUse"
+                            }
+                        ],
+                        "text": "Total number of ventilators in use."
+                    },
+                    "count": "$numVentUse"
+                }
+            ]
+        },
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/uv/saner/CodeSystem/MeasureGroupSystem",
+                        "code": "Encounters"
+                    }
+                ],
+                "text": "Hospital COVID-19 Encounters Reporting"
+            },
+            "population": [
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/uv/saner/CodeSystem/MeasuredValues",
+                                "code": "numC19HospPats"
+                            }
+                        ],
+                        "text": "Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19."
+                    },
+                    "count": "$numC19HospPats"
+                },
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/uv/saner/CodeSystem/MeasuredValues",
+                                "code": "numC19MechVentPats"
+                            }
+                        ],
+                        "text": "Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator."
+                    },
+                    "count": "$numC19MechVentPats"
+                },
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/uv/saner/CodeSystem/MeasuredValues",
+                                "code": "numC19HOPats"
+                            }
+                        ],
+                        "text": "Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID - 19 14 or more days after hospitalization."
+                    },
+                    "count": "$numC19HOPats"
+                },
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/uv/saner/CodeSystem/MeasuredValues",
+                                "code": "numC19OverflowPats"
+                            }
+                        ],
+                        "text": "Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed."
+                    },
+                    "count": "$numC19OverflowPats"
+                },
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/uv/saner/CodeSystem/MeasuredValues",
+                                "code": "numC19OFMechVentPats"
+                            }
+                        ],
+                        "text": "Patients with suspected or confirmed COVID - 19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator."
+                    },
+                    "count": "$numC19OFMechVentPats"
+                },
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/uv/saner/CodeSystem/MeasuredValues",
+                                "code": "numC19Died"
+                            }
+                        ],
+                        "text": "Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location."
+                    },
+                    "count": "$numC19Died"
+                },
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/uv/saner/CodeSystem/MeasuredValues",
+                                "code": "numC19Pats"
+                            }
+                        ],
+                        "text": "Patients with suspected or confirmed COVID-19 in any location."
+                    },
+                    "count": "$numC19Pats"
+                },
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/uv/saner/CodeSystem/MeasuredValues",
+                                "code": "numC19VentPats"
+                            }
+                        ],
+                        "text": "Ventilated COVID-19 Patients"
+                    },
+                    "count": "$numC19VentPats"
+                }
+            ]
+        }
+    ]
+}

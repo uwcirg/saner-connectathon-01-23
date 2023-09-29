@@ -1,0 +1,23 @@
+{
+    "resourceType": "Location",
+    "status": "active",
+    "name": "$name",
+    "mode": "instance",
+    "telecom": [
+        {
+            "system": "phone",
+            "value": "555-555-5555"
+        }
+    ],
+    "address": {
+        "line": [
+            "101 1st St"
+        ],
+        "city": "Olympia",
+        "state": "WA",
+        "postalCode": "98501"
+    },
+    "managingOrganization": {
+        "display": "WA State Department of Health"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "resourceType": "Organization",
+    "name": "$name",
+    "address": [
+        {
+            "line": [
+                "59 Washington St."
+            ],
+            "city": "Olympia",
+            "state": "WA",
+            "postalCode": "98501",
+            "country": "USA"
+        }
+    ]
+}

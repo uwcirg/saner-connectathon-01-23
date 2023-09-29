@@ -1,0 +1,82 @@
+{
+    "resourceType": "MeasureReport",
+    "language": "en",
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.population.description",
+            "valueString": "ICU Bed Current Occupancy"
+        }
+    ],
+    "status": "complete",
+    "type": "individual",
+    "measure": "https://cqf-ruler.ecqm.icfcloud.com/fhir/Measure/ICUBedCurrentOccupancy",
+    "subject": "$subject",
+    "reporter": {
+        "reference": "#WADOH",
+        "display": "Washington State Department of Health"
+    },
+    "date": "$date",
+    "period": {
+        "start": "$start",
+        "end": "$end"
+    },
+    "improvementNotation": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+                "code": "increase"
+            }
+        ]
+    },
+    "contained": [
+        {
+            "resourceType": "Organization",
+            "id": "WADOH",
+            "name": "Washington State Department of Health",
+            "address": [
+                {
+                    "line": [
+                        "59 Washington St."
+                    ],
+                    "city": "Olympia",
+                    "state": "WA",
+                    "postalCode": "98501",
+                    "country": "USA"
+                }
+            ]
+        }
+    ],
+    "group": [
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/uv/saner/CodeSystem/MeasureGroupSystem",
+                        "code": "Beds",
+                        "display": "Beds"
+                    }
+                ],
+                "text": "Hospital Bed Reporting"
+            },
+            "population": [
+                {
+                    "code": {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                                "code": "initial-population",
+                                "display": "Initial Population"
+                            },
+                            {
+                                "system": "http://hl7.org/fhir/uv/saner/CodeSystem/MeasuredValues",
+                                "code": "numICUBedsOcc",
+                                "display": "Total number of staffed inpatient ICU beds that are occupied"
+                            }
+                        ]
+                    },
+                    "count": "$numICUBedsOcc"
+                }
+            ]
+        }
+    ]
+}

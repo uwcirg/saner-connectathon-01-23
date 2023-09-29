@@ -77,6 +77,7 @@ tables:
       numC19Died:
         fhir_path: MeasureReport.group[2].population[5].count
         selection_criteria: first
+  
   FEMA Daily Hospital COVID-19 Reporting:
     resource_type: MeasureReport
     query_params:
@@ -142,4 +143,100 @@ tables:
         selection_criteria: first
       latestReports:
         fhir_path: MeasureReport.group[1].population[5].count
+        selection_criteria: first
+
+  ICU Beds Reporting:
+    resource_type: MeasureReport
+    query_params:
+      measure: https://cqf-ruler.ecqm.icfcloud.com/fhir/Measure/ICUBedsReporting
+    earliest_updated_datetime: "2020-01-01T00:00:00"
+    columns:
+      MeasureReport ID:
+        fhir_path: MeasureReport.id
+        selection_criteria: first
+      Measure:
+        fhir_path: MeasureReport.measure
+        selection_criteria: first
+      Updated:
+        fhir_path: MeasureReport.meta.lastUpdated
+        selection_criteria: first
+      Subject:
+        fhir_path: MeasureReport.subject.display
+        selection_criteria: first
+      Reporter:
+        fhir_path: MeasureReport.reporter.display
+        selection_criteria: first
+      Period Start:
+        fhir_path: MeasureReport.period.start
+        selection_criteria: first
+      Period End:
+        fhir_path: MeasureReport.period.end
+        selection_criteria: first
+      numICUBedsAvail:
+        fhir_path: MeasureReport.group[0].population[1].count
+        selection_criteria: first
+      numICUBedsOcc:
+        fhir_path: MeasureReport.group[0].population[2].count
+        selection_criteria: first
+
+  ICU Beds Current Occupancy:
+    resource_type: MeasureReport
+    query_params:
+      measure: https://cqf-ruler.ecqm.icfcloud.com/fhir/Measure/ICUBedCurrentOccupancy
+    earliest_updated_datetime: "2020-01-01T00:00:00"
+    columns:
+      MeasureReport ID:
+        fhir_path: MeasureReport.id
+        selection_criteria: first
+      Measure:
+        fhir_path: MeasureReport.measure
+        selection_criteria: first
+      Updated:
+        fhir_path: MeasureReport.meta.lastUpdated
+        selection_criteria: first
+      Subject:
+        fhir_path: MeasureReport.subject.display
+        selection_criteria: first
+      Reporter:
+        fhir_path: MeasureReport.reporter.display
+        selection_criteria: first
+      Period Start:
+        fhir_path: MeasureReport.period.start
+        selection_criteria: first
+      Period End:
+        fhir_path: MeasureReport.period.end
+        selection_criteria: first
+      numICUBedsOcc:
+        fhir_path: MeasureReport.group[0].population[0].count
+        selection_criteria: first
+  
+  ICU Beds Staffed Capacity:
+    resource_type: MeasureReport
+    query_params:
+      measure: https://cqf-ruler.ecqm.icfcloud.com/fhir/Measure/ICUBedStaffedCapacity
+    earliest_updated_datetime: "2020-01-01T00:00:00"
+    columns:
+      MeasureReport ID:
+        fhir_path: MeasureReport.id
+        selection_criteria: first
+      Measure:
+        fhir_path: MeasureReport.measure
+        selection_criteria: first
+      Updated:
+        fhir_path: MeasureReport.meta.lastUpdated
+        selection_criteria: first
+      Subject:
+        fhir_path: MeasureReport.subject.display
+        selection_criteria: first
+      Reporter:
+        fhir_path: MeasureReport.reporter.display
+        selection_criteria: first
+      Period Start:
+        fhir_path: MeasureReport.period.start
+        selection_criteria: first
+      Period End:
+        fhir_path: MeasureReport.period.end
+        selection_criteria: first
+      numICUBedsOcc:
+        fhir_path: MeasureReport.group[0].population[0].count
         selection_criteria: first
